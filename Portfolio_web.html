@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #e2e8f0;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a, #047857);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #cbd5e1;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link:hover {
+            transform: scale(1.1);
+            color: #cbd5e1;
+        }
+        .card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+            background-color: #2d2d2d;
+        }
+        .card:hover {
+            transform: translateY(-12px) rotate(3deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            background-color: #3f3f3f;
+        }
+        .contact-section {
+            background: linear-gradient(135deg, #0f172a, #059669);
+        }
+        .hero-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .hero-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            background-color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-gray-900 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-emerald-400 animate-nav-logo">MyWebsite</h1>
+            <div class="space-x-8">
+                <a href="#home" class="nav-link text-gray-300 hover:text-slate-300">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-slate-300">About</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-slate-300">Services</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-slate-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white pt-28 pb-40">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 animate-hero-title">Welcome</h2>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto animate-hero-text">
+                Unleash creativity and innovation with our cutting-edge solutions. Join us on this exciting journey!
+            </p>
+            <a href="#services" class="hero-button bg-slate-200 text-navy-900 px-8 py-4 rounded-full font-semibold animate-hero-button">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-emerald-400 mb-12 animate-about-title">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 animate-about-image">
+                    <div class="bg-navy-900 h-72 rounded-xl transform transition duration-500 hover:scale-105 hover:rotate-2"></div>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg text-gray-300 leading-relaxed animate-about-text">
+                        We're a dynamic team passionate about innovation, delivering exceptional solutions with a focus on quality, creativity, and client satisfaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-emerald-400 mb-12 animate-services-title">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-xl shadow-lg animate-service-card">
+                    <h3 class="text-xl font-semibold text-emerald-400 mb-4">Web Development</h3>
+                    <p class="text-gray-300">Building responsive, high-performance websites tailored to your vision.</p>
+                </div>
+                <div class="card p-8 rounded-xl shadow-lg animate-service-card">
+                   那么
+
+                    <h3 class="text-xl font-semibold text-emerald-400 mb-4">UI/UX Design</h3>
+                    <p class="text-gray-300">Creating seamless and visually stunning user experiences.</p>
+                </div>
+                <div class="card p-8 rounded-xl shadow-lg animate-service-card">
+                    <h3 class="text-xl font-semibold text-emerald-400 mb-4">Consulting</h3>
+                    <p class="text-gray-300">Expert guidance to elevate your business to new heights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-24 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 animate-contact-title">Get in Touch</h2>
+            <div class="max-w-lg mx-auto bg-gray-800 p-10 rounded-xl shadow-lg animate-contact-form">
+                <p class="text-gray-300">Contact form design placeholder.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="animate-footer-text">© 2025 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navigation Animations
+        gsap.from(".animate-nav-logo", {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            ease: "power3.out"
+        });
+        gsap.from(".nav-link", {
+            opacity: 0,
+            y: -20,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power3.out"
+        });
+
+        // Hero Section Animations
+        gsap.from(".animate-hero-title", {
+            opacity: 0,
+            y: 80,
+            scale: 0.9,
+            duration: 1.2,
+            ease: "power4.out"
+        });
+        gsap.from(".animate-hero-text", {
+            opacity: 0,
+            y: 60,
+            duration: 1.2,
+            delay: 0.3,
+            ease: "power4.out"
+        });
+        gsap.from(".animate-hero-button", {
+            opacity: 0,
+            scale: 0.7,
+            rotation: -10,
+            duration: 1,
+            delay: 0.6,
+            ease: "elastic.out(1, 0.5)"
+        });
+
+        // About Section Animations
+        gsap.from(".animate-about-title", {
+            scrollTrigger: {
+                trigger: "#about",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power3.out"
+        });
+        gsap.from(".animate-about-image", {
+            scrollTrigger: {
+                trigger: "#about",
+                start: "top 80%"
+            },
+            opacity: 0,
+            x: -150,
+            rotation: -5,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+        gsap.from(".animate-about-text", {
+            scrollTrigger: {
+                trigger: "#about",
+                start: "top 80%"
+            },
+            opacity: 0,
+            x: 150,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+
+        // Services Section Animations
+        gsap.from(".animate-services-title", {
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power3.out"
+        });
+        gsap.from(".animate-service-card", {
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 80,
+            rotation: 5,
+            scale: 0.95,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power4.out"
+        });
+
+        // Contact Section Animations
+        gsap.from(".animate-contact-title", {
+            scrollTrigger: {
+                trigger: "#contact",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power3.out"
+        });
+        gsap.from(".animate-contact-form", {
+            scrollTrigger: {
+                trigger: "#contact",
+                start: "top 80%"
+            },
+            opacity: 0,
+            scale: 0.8,
+            rotation: -3,
+            duration: 1.2,
+            delay: 0.3,
+            ease: "back.out(1.5)"
+        });
+
+        // Footer Animation
+        gsap.from(".animate-footer-text", {
+            scrollTrigger: {
+                trigger: "footer",
+                start: "top 90%"
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power3.out"
+        });
+    </script>
+</body>
+</html>
